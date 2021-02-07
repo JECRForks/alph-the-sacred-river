@@ -39,7 +39,7 @@ with st.beta_expander("Customize Poem Text"):
 # Run the selected poem through the model
 clf = CLIP()
 clf.load()
-results = clf.(lines)
+results = clf(lines)
 st.write(results)
 results2=results.json()
 st.write(results2)
@@ -60,7 +60,7 @@ st.sidebar.markdown(
 # Show the credits for each photo in an expandable sidebar
 credits = []
 for k, row in enumerate(results):
-    line = row[1]
+    line = row['text']
     st.markdown(f"## *{line}*")
     grid = combine_images(row["unsplashIDs"])
 
