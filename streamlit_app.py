@@ -52,7 +52,7 @@ st.sidebar.markdown(
 st.sidebar.markdown(
     "Made with 💙 by [@metasemantic](https://twitter.com/metasemantic/status/1349446585952989186)"
 )
-
+st.write(results)
 # Show the credits for each photo in an expandable sidebar
 credits = []
 for k, row in enumerate(results):
