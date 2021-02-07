@@ -21,7 +21,7 @@ cache_dest.mkdir(exist_ok=True, parents=True)
 @st.cache(ttl=3600)
 def encoding_sentences(lines):
     r = requests.get(api_url, json={"lines": lines})
-    return r.json()
+    return r
 
 
 def cache_download(image_idx, expected_height=600):
