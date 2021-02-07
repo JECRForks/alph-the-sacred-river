@@ -11,7 +11,7 @@ import os
 api_port=os.environ.get('PORT')
 
 
-api_url = "http://0.0.0.0:"+str(api_port)+"/infer"
+api_url = "http://localhost:"+str(api_port)+"/infer"
 
 
 cache_dest = Path("data/streamlit_image_cache")
