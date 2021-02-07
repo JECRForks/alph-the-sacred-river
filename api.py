@@ -9,6 +9,7 @@ from typing import List
 from pydantic import BaseModel
 
 app_name = "alph-the-sacred-river"
+app_formal_name = "Alph The Sacred River"
 __version__ = "0.1.0"
 
 
@@ -60,17 +61,15 @@ class CLIP:
             dx = dx[:top_k]
 
             data.append(
-                {
-                    "text": sent,
-                    "unsplashIDs": dx.index.values.tolist(),
-                    "scores": dx.values.tolist(),
-                }
+                {"text": sent,
+                 "unsplashIDs":dx.index.values.tolist(), "scores": dx.values.tolist()}
             )
+
         return data
 
 
 def load_sample_data():
-    with open("docs/collected_poems/kubla_khan.txt") as FIN:
+    with open("docs/kubla_khan.txt") as FIN:
         sents = FIN.read().split("\n")
 
     sents = [" ".join(line.split()) for line in sents if line.strip()]
@@ -78,10 +77,6 @@ def load_sample_data():
 
 
 app = FastAPI()
-
-clf = CLIP()
-clf.load()
-
 
 class TextListInput(BaseModel):
     lines: List[str]
@@ -94,13 +89,15 @@ def root():
         "version": __version__,
     }
 
-
 @app.get("/infer")
 def infer_multi(q: TextListInput):
     return clf(q.lines)
 
 
 if __name__ == "__main__":
+
+    clf = CLIP()
+    clf.load()
 
     sents = load_sample_data()
 
