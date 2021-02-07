@@ -1,7 +1,6 @@
 import streamlit as st
 from pathlib import Path
-
-import start_api
+import api
 from interface import combine_images, encoding_sentences, preprocess_text
 
 app_formal_name = "Alph The Sacred River"
@@ -38,7 +37,9 @@ with st.beta_expander("Customize Poem Text"):
     poem_choice, lines = preprocess_text(text_input)
 
 # Run the selected poem through the model
-results = encoding_sentences(lines)
+clf = CLIP()
+clf.load()
+results = clf.(lines)
 st.write(results)
 results2=results.json()
 st.write(results2)
