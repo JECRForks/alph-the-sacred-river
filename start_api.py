@@ -7,7 +7,7 @@ if it isn't detected.
 import subprocess
 import requests
 
-api_check_url = "http://0.0.0.0:"+str($PORT)+"/"
+api_check_url = "http://0.0.0.0:80/"
 
 try:
     r = requests.get(api_check_url)
