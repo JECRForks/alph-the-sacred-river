@@ -10,7 +10,7 @@ import requests
 api_port=os.environ.get('PORT')
 
 
-api_check_url = "http://127.0.0.1:"+str(api_port)+"/"
+api_check_url = "http://127.0.0.1:"+str(api_port)
 
 try:
     r = requests.get(api_check_url)
