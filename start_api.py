@@ -7,7 +7,10 @@ if it isn't detected.
 import subprocess
 import requests
 
-api_check_url = "http://0.0.0.0:80/"
+api_port=os.environ.get('PORT')
+
+
+api_check_url = "http://127.0.0.1:"+str(api_port)+"/"
 
 try:
     r = requests.get(api_check_url)
