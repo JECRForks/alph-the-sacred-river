@@ -56,7 +56,7 @@ st.sidebar.markdown(
 # Show the credits for each photo in an expandable sidebar
 credits = []
 for k, row in enumerate(results):
-    line = row["text"]
+    line = row[1]
     st.markdown(f"## *{line}*")
     grid = combine_images(row["unsplashIDs"])
 
