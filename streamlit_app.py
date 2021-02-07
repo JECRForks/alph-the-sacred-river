@@ -41,9 +41,8 @@ with st.beta_expander("Customize Poem Text"):
 clf = CLIP()
 clf.load()
 results = clf(lines)
-st.write(results)
-results2=results.json()
-st.write(results2)
+#st.write(results)
+
 
 
 
