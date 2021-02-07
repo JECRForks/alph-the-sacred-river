@@ -1,6 +1,7 @@
 import streamlit as st
 from pathlib import Path
 import api
+from api import CLIP
 from interface import combine_images, encoding_sentences, preprocess_text
 
 app_formal_name = "Alph The Sacred River"
