@@ -7,7 +7,7 @@ import io
 
 
 # Typically we run this on the same machine
-api_url = "http://0.0.0.0:"+str($PORT)+"/infer"
+api_url = "http://0.0.0.0:80/infer"
 
 
 cache_dest = Path("data/streamlit_image_cache")
