@@ -39,6 +39,10 @@ with st.beta_expander("Customize Poem Text"):
 
 # Run the selected poem through the model
 results = encoding_sentences(lines)
+st.write(results)
+results2=results.json()
+st.write(results2)
+
 
 
 st.title(poem_choice)
@@ -52,7 +56,6 @@ st.sidebar.markdown(
 st.sidebar.markdown(
     "Made with 💙 by [@metasemantic](https://twitter.com/metasemantic/status/1349446585952989186)"
 )
-st.write(results)
 # Show the credits for each photo in an expandable sidebar
 credits = []
 for k, row in enumerate(results):
